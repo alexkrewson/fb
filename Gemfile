@@ -8,13 +8,16 @@ gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
 # Use sqlite3 as the database for Active Record
 group :development, :test do
  gem 'sqlite3'
+
+ gem 'guard'
+
 end
 
 group :production do
   gem 'pg'
 end
 
-
+gem 'minitest-reporters', '~> 1.1', '>= 1.1.11'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
@@ -56,6 +59,9 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  gem 'guard'
+  gem 'guard-minitest'
+
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
