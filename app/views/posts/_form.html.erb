@@ -1,3 +1,49 @@
+
+
+
+<%= simple_form_for(@post) do |f| %>
+  
+
+
+  
+    <%= f.error_notification %>
+
+  <div class="field">
+    <div class="control">
+    <%= f.input :body, label: "Post about it", input_html: { class: "text_area" }, 
+    wrapper: false, label_html: {class: "label"}, placeholder: "Compose a new post...", autofocus: true %>
+    </div>
+  </div>
+  <%= f.button :submit, class: "button-is-info" %>
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<% if false %>
+
+
 <%= form_with(model: post, local: true) do |form| %>
   <% if post.errors.any? %>
     <div id="error_explanation">
@@ -16,12 +62,31 @@
     <%= form.text_area :body %>
   </div>
 
+<% if false %>
   <div class="field">
     <%= form.label :user_id %>
     <%= form.text_field :user_id %>
   </div>
+<% end %>
 
   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
+
+
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
