@@ -12,7 +12,6 @@ User.create(name: 'Mr A', email: 'a@a.com', password: 'aaaaaa')
 
 Post.create(body: 'Look at me I am a post body!', user_id: '3')
 
-# Dog.create(name: "Tilly")
 
 Friendship.create(user_id: "1", friend_id: "2")
 Friendship.create(user_id: "1", friend_id: "3")
