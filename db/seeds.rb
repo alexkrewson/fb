@@ -17,4 +17,7 @@ Friendship.create(user_id: "1", friend_id: "2")
 Friendship.create(user_id: "1", friend_id: "3")
 Friendship.create(user_id: "1", friend_id: "4")
 
+Comment.create(body: "I'm a comment body", user_id: "1", post_id: "3")
+
+
 

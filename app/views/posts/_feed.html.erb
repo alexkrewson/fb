@@ -41,20 +41,43 @@
                             <%= link_to post, class: "level-item" do %>
                                 <span class="icon"><i class="fa fa-link" aria-hidden="true"></i></span>
                             <% end %>
-                                <%= link_to edit_post_path(post), class: "level-item" do %>
-                                    <span class="icon"><i class="fa fa-pencil" aria-hidden="true"></i></span>
-                                <% end %>
-                                <%= link_to post, method: :delete, data: {confirm: "are you sure you want to delete this post?"
-                                } do %>
-                                    <span class="icon"><i class="fa fa-trash-o" aria-hidden="true"></i></span>
-                                <% end %>
+                            <%= link_to edit_post_path(post), class: "level-item" do %>
+                                <span class="icon"><i class="fa fa-pencil" aria-hidden="true"></i></span>
+                            <% end %>
+                            <%= link_to post, method: :delete, data: {confirm: "are you sure you want to delete this post?"
+                            } do %>
+                                <span class="icon"><i class="fa fa-trash-o" aria-hidden="true"></i></span>
+                            <% end %>
                         <% end %>
-                         
+                        <% link_to 'Comment', new_post_comment_path(post.id), class: "button is-dark" %>
+                    
                     </div>
+                    
                 </nav>
             </div>
         </article>
 
+        <br>
+        <% if current_user != post.user %>
+        <% @post = post %>
+        <%= render 'comments/form' %>
+        <% end %>
+        <br>
+        <br>
+        <table>
+        <thead>
+        <tr>
+        <th style="width:50px"></th>
+        <th style="width:250px"></th>
+      </tr>
+    </thead>
+        <% post.comments.order("created_at DESC").each do |comment|%>
+        <tr>
+        <td><%= comment.user.name %>:</td>
+        <td><%= comment.body %></td>
+        </tr>
+        <% end %>
+        </table>
     </div>
 <% end %>
 </div>

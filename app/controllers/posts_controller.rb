@@ -8,10 +8,9 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all.all.order("created_at DESC")
     @post = Post.new
-
-    # puts "current_uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuser"
-    # puts current_user.id
-    # puts "current_uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuser"
+    if user_signed_in?
+      @comment = current_user.comments.build
+    end
 
 
   end
